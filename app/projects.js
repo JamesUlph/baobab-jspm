@@ -4,6 +4,7 @@ import {branch} from 'baobab-react/decorators';
 import PropTypes from 'baobab-react/prop-types';
 
 import actions from './actions';
+import classnames from 'classnames';
 
 @branch({
 	cursors:{
@@ -34,15 +35,18 @@ class Projects extends React.Component {
 	}
 
 	renderProject(id){
+		console.log(id,this.props.selectedProjectId);
 		let project=this.props.projects[id];
-		return (<li onClick={actions.selectProject.bind(null,id)} key={id}>{project.title}</li>);
+		let cl=classnames({foo:id==this.props.selectedProjectId});
+		console.log(cl);
+		return (<li className={cl} onClick={actions.selectProject.bind(null,id)} key={id}>{project.title}</li>);
 	}
 
 	render(){
 		//console.log(this.context.cursors.foo.get());
 		
 		return (
-			<div>Some projects {this.props.selectedProjectId}
+			<div>Some projects:
 			{this.props.selectedProject}
 			<button onClick={this.handleClick.bind(this)}>Update</button>
 			{this.props.foo}

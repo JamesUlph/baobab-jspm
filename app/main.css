@@ -1,3 +1,16 @@
 body {
+	background-color: #ffffff;
+}
+
+li {
+	cursor: pointer;
+	list-style: none;
+}
+
+li:hover {
+	background-color:#3ee;
+}
+
+li.foo {
 	background-color: red;
 }

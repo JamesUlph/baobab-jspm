@@ -22,6 +22,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.4.7",
     "baobab": "npm:baobab@1.1.0",
     "baobab-react": "npm:baobab-react@0.1.1",
+    "classnames": "npm:classnames@2.1.2",
     "core-js": "npm:core-js@0.9.13",
     "css": "github:systemjs/plugin-css@0.1.11",
     "react": "npm:react@0.14.0-alpha3",
@@ -88,6 +89,11 @@ System.config({
       "base64-js": "npm:base64-js@0.0.8",
       "ieee754": "npm:ieee754@1.1.5",
       "is-array": "npm:is-array@1.0.1"
+    },
+    "npm:classnames@2.1.2": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:clean-css@3.1.9": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
