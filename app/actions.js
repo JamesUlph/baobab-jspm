@@ -3,7 +3,8 @@ import tree from './tree';
 let actions={
 
 	selectProject(id){
-		//tree.set('selectedProjectId',id);
+		tree.set('selectedProjectId',id);
+		tree.commit();
 	}
 
 };
