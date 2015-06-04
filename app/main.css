@@ -1,5 +1,6 @@
 body {
-	background-color: #ffffff;
+	background-color: #392457;
+	color:white;
 }
 
 li {
@@ -13,4 +14,22 @@ li:hover {
 
 li.foo {
 	background-color: red;
+}
+
+.mycal {
+
+	text-align: center;
+	background-color: #333;
+}
+
+.titlerow {
+	background-color: blue;
+}
+
+.current {
+	background-color: red;
+}
+
+.weekend {
+	background-color: #555;
 }

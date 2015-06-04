@@ -3,6 +3,7 @@ import Projects from './projects';
 import {root} from 'baobab-react/decorators';
 
 import tree from './tree';
+import Calendar from './calendar';
 
 @root(tree)
 class App extends React.Component {
@@ -13,7 +14,9 @@ class App extends React.Component {
 	}
 
 	render(){
-		return (<div>Hello world!
+		return (<div>
+<Calendar offset={2} />
+<Calendar />
 <Projects />
 <Projects />
 <Projects />

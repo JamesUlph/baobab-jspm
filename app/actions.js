@@ -5,6 +5,11 @@ let actions={
 	selectProject(id){
 		tree.set('selectedProjectId',id);
 		//tree.commit();
+	},
+
+	selectLocation(id){
+		
+		tree.set('selectedLocationId',id);
 	}
 
 };
