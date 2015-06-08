@@ -1,4 +1,5 @@
 import tree from './tree';
+import uid from 'gen-uid';
 
 let actions={
 
@@ -17,7 +18,10 @@ let actions={
 		var l=c.get();
 		console.log(l);
 		
-		c.set('9',[{desc:'Item added to tree'}]);
+
+		let guid=uid.v4();
+
+		c.set(guid,[{desc:'Item '+guid}]);
 		
 		console.log(c);
 	}
