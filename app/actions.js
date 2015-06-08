@@ -10,6 +10,16 @@ let actions={
 	selectLocation(id){
 		
 		tree.set('selectedLocationId',id);
+	},
+
+	addLocation(){
+		var c=tree.select('locations');//
+		var l=c.get();
+		console.log(l);
+		
+		c.set('9',[{desc:'Item added to tree'}]);
+		
+		console.log(c);
 	}
 
 };

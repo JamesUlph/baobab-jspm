@@ -9,6 +9,7 @@ import classnames from 'classnames';
 @branch({
 	cursors:{
 		foo:['foo'],
+		title:['title'],
 		projects:['projects'],
 		locations:['locations'],
 		selectedProjectId:['selectedProjectId'],
@@ -20,12 +21,18 @@ import classnames from 'classnames';
 	}
 })
 class Projects extends React.Component {
-	static contextTypes = {
+
+	static contextTypes={
 		tree: PropTypes.baobab,
 		cursors: PropTypes.cursors
-	}
+	};
+ 
+
 	constructor(props){
 		super(props);
+
+
+
 
 // Tree available through the context
     //this.context.tree.emit('customEvent');
@@ -35,8 +42,12 @@ class Projects extends React.Component {
 		this.updateLocation=this.updateLocation.bind(this);
 	}
 
+
+
+
 	handleClick(){
 		this.context.cursors.foo.set('Jack');
+		//this.context.cursors.locations.push({desc:'fuck off'});
 	}
 
 	renderProject(id){
@@ -58,16 +69,28 @@ class Projects extends React.Component {
 	}
 
 	typedChange(x){
-	this.context.cursors.foo.set(x.target.value);
+		this.context.cursors.foo.set(x.target.value);
+	}
+
+	change2(x){
+		this.context.cursors.title.set(x.target.value);
+	}
+
+	clearItems(){
+		this.context.cursors.selectedProjectId.set(null);
+		this.context.cursors.projects.set({});
 	}
 
 	render(){
-		//console.log(this.context.tree);
+		console.log(this.props.title);
 		
 		return (
 			<div>Some projects:
+			{this.props.title}
 			{this.props.selectedProject}
 			{this.props.selectedLocation}
+
+			<input type="text" value={this.props.title} onChange={this.change2.bind(this)} />
 
 			<input type="text" value={this.props.foo} onChange={this.typedChange.bind(this)} />
 			Location=
@@ -78,6 +101,9 @@ class Projects extends React.Component {
 			<select value={this.props.selectedLocationId} onChange={this.updateLocation}>{Object.keys(this.props.locations).map(this.renderLocation)}</select>
 			
 			{Object.keys(this.props.projects).map(this.renderProject)}
+			
+			<button type="button" onClick={this.clearItems.bind(this)}>Clear</button>
+
 			</div>);
 	}
 

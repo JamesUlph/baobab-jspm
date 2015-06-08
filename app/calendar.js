@@ -28,7 +28,8 @@ class Calendar extends React.Component {
 
 		this.renderWeek=this.renderWeek.bind(this);
 		this.renderHeading=this.renderHeading.bind(this);
-		this.calculate=this.calculate.bind(this);		
+		this.calculate=this.calculate.bind(this);
+		this.renderDay=this.renderDay.bind(this);		
 	}
 
 	calculate(){
@@ -43,6 +44,7 @@ class Calendar extends React.Component {
 
 		let offset=this.state.offset; // start of week offset (0=sun)
 		let mth=d.getMonth();
+		let yr=d.getFullYear();
 		let days=this.monthDays[mth];
 
 		let prevmth = mth==0 ? 11 : mth-1;
@@ -70,14 +72,19 @@ class Calendar extends React.Component {
 				let q=(p+offset)%7;		
 
 				if (day>0 && day <= days){
-					dy.push({title:this.dayOfWeek[q],day:day,current:true,dow:q==0 | q==6});
+					dy.push({title:this.dayOfWeek[q],
+						day:day,
+						year:yr,
+						current:true,
+						month:mth,
+						dow:q==0 | q==6});
 				}
 				else {
 					if (day<=0) {
-						dy.push({title:this.dayOfWeek[q],day:this.monthDays[prevmth]+day,current:false});
+						dy.push({year:mth-1==-1 ? yr-1 : yr,month:(mth-1)==-1 ? 11 : mth-1,title:this.dayOfWeek[q],day:this.monthDays[prevmth]+day,current:false});
 					}
 					else {
-						dy.push({title:this.dayOfWeek[q],day:day-this.monthDays[mth],current:false});
+						dy.push({year:mth+1==12 ? yr+1 : yr,month:(mth+1)==12 ? 0 : mth+1,title:this.dayOfWeek[q],day:day-this.monthDays[mth],current:false});
 					}
 				}
 				day++;
@@ -88,13 +95,18 @@ class Calendar extends React.Component {
 		}
 	}
 
+	dayClick(x){
+		console.log('day',x);
+	}
+
 	renderDay(item,index){
 		if (item==undefined) return;
 		
+		var tt=this.dayClick;
 		var cl=classNames({'cellTitle':true,'current':!item.current,'weekend':item.dow});
 		var cl2=classNames({'cellBody':true,'current':!item.current});
 		//return (<td className={cl}><div className={cl}>{item.title}</div><div className={cl2}>{item.day==-1 ? '' : item.day}</div></td>);
-		return (<td className={cl}><div className={cl2}>{item.day==-1 ? '' : item.day}</div></td>);
+		return (<td onClick={tt.bind(null,item)} className={cl}><div className={cl2}>{item.day==-1 ? '' : item.day}</div></td>);
 	}
 
 	renderWeek(item,index){
@@ -148,7 +160,7 @@ class Calendar extends React.Component {
 			<table className="mycal"><tbody>{this.renderHeading()}{this.weeks.map(this.renderWeek)}</tbody></table>
 			
 			</div>
-		);
+			);
 	}
 };
 

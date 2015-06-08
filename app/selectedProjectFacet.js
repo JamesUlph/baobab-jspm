@@ -3,9 +3,16 @@ cursors:{
 	id:['selectedProjectId'],
 	projects:['projects']},
 	 get(state){
-	 	if (state.id==null) return null;
-	 	console.log(state.projects[state.id]);
 
+	 	if (state.projects.length==0) {
+	 		return null;
+	 	};
+	 	if (state.id==null) return null;
+
+
+	 	
+
+	 	
 	 	return state.projects[state.id].title;
 	 }
 }
