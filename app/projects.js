@@ -47,6 +47,7 @@ class Projects extends React.Component {
 
 	handleClick(){
 		this.context.cursors.foo.set('Jack');
+		actions.addLocation('fff');
 		//this.context.cursors.locations.push({desc:'fuck off'});
 	}
 
