@@ -32,6 +32,7 @@
   "dependencies": {
     "baobab": "^1.1.0",
     "baobab-react": "^0.1.1",
+    "boron": "^0.1.2",
     "classnames": "^2.1.2",
     "gen-uid": "0.0.2",
     "less": "^2.5.1",
