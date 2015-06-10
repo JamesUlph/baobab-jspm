@@ -7,6 +7,7 @@ import actions from './actions';
 import classnames from 'classnames';
 
 import Modal from 'boron/WaveModal';
+import MyModal from './mymodal';
 
 @branch({
 	cursors:{
@@ -80,7 +81,9 @@ class Projects extends React.Component {
 	}
 
 	clearItems(){
-		this.refs.modal.show();
+		//this.refs.modal.show();
+		this.refs.mymodal.show();
+		
 		this.context.cursors.selectedProjectId.set(null);
 		this.context.cursors.projects.set({});
 	}
@@ -111,10 +114,14 @@ class Projects extends React.Component {
 			{Object.keys(this.props.projects).map(this.renderProject)}
 			
 			<button type="button" onClick={this.clearItems.bind(this)}>Clear</button>
-<Modal ref='modal'>
-Testing 123
-<button onClick={this.hideModal.bind(this)}>Close</button>
-</Modal>
+			
+			<Modal ref='modal'>
+				Testing 123
+				<button onClick={this.hideModal.bind(this)}>Close</button>
+			</Modal>
+			
+			<MyModal ref='mymodal' showing={true}>This is a modal test</MyModal>
+			
 			</div>);
 	}
 
