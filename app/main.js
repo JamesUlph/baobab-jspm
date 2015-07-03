@@ -1,6 +1,8 @@
 //import './main.css!';
 //import './main.css';
 import './style/main.less';
+import './style/cal.less';
+
 import React from 'react';
 
 import tree from './tree';

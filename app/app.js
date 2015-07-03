@@ -19,6 +19,8 @@ class App extends React.Component {
 <div className="arrow_box"><div>This is a test<br/>rwar</div></div>
 
 <Calendar offset={2} />
+<Calendar offset={1} />
+
 <Projects />
 
 			</div>);

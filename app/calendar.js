@@ -29,7 +29,11 @@ class Calendar extends React.Component {
 		this.renderWeek=this.renderWeek.bind(this);
 		this.renderHeading=this.renderHeading.bind(this);
 		this.calculate=this.calculate.bind(this);
-		this.renderDay=this.renderDay.bind(this);		
+		this.renderDay=this.renderDay.bind(this);
+
+		this.renderWeek2=this.renderWeek2.bind(this);
+		this.renderDay2=this.renderDay2.bind(this);
+
 	}
 
 	calculate(){
@@ -97,6 +101,7 @@ class Calendar extends React.Component {
 
 	dayClick(x){
 		console.log('day',x);
+
 	}
 
 	renderDay(item,index){
@@ -114,6 +119,17 @@ class Calendar extends React.Component {
 
 		var t=item.map(this.renderDay);
 		return (<tr>{t}</tr>);
+	}
+
+	renderWeek2(item,index){
+		if (item==undefined) return;
+
+		var t=item.map(this.renderDay2);
+		return (<div className="week">{t}</div>);
+	}
+
+	renderDay2(item,index){
+		return (<span className="day">{item.day}</span>);
 	}
 
 	renderHeading(){
@@ -159,6 +175,9 @@ class Calendar extends React.Component {
 			<span onClick={this.addOffset.bind(this)}>Offset {this.state.offset}</span>
 			<table className="mycal"><tbody>{this.renderHeading()}{this.weeks.map(this.renderWeek)}</tbody></table>
 			
+			<div className="calendar">
+			{this.weeks.map(this.renderWeek2)}
+			</div>
 			</div>
 			);
 	}
