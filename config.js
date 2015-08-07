@@ -18,19 +18,19 @@ System.config({
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.6.4",
-    "babel-runtime": "npm:babel-runtime@5.6.4",
-    "baobab": "npm:baobab@1.1.1",
+    "babel": "npm:babel-core@5.8.5",
+    "babel-runtime": "npm:babel-runtime@5.8.5",
+    "baobab": "npm:baobab@1.1.2",
     "baobab-react": "npm:baobab-react@0.1.1",
-    "classnames": "npm:classnames@2.1.2",
+    "classnames": "npm:classnames@2.1.3",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.13",
-    "react": "npm:react@0.14.0-alpha3",
+    "react": "npm:react@0.14.0-beta1",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.2.2"
+      "buffer": "npm:buffer@3.3.1"
     },
     "github:jspm/nodelibs-events@0.1.1": {
       "events": "npm:events@1.0.2"
@@ -47,7 +47,7 @@ System.config({
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:amdefine@0.1.1": {
+    "npm:amdefine@1.0.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "module": "github:jspm/nodelibs-module@0.1.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
@@ -56,22 +56,22 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.6.4": {
+    "npm:babel-runtime@5.8.5": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:baobab-react@0.1.1": {
-      "baobab": "npm:baobab@1.1.1",
+      "baobab": "npm:baobab@1.1.2",
       "react": "npm:react@0.13.3"
     },
-    "npm:baobab@1.1.1": {
-      "emmett": "npm:emmett@3.0.1"
+    "npm:baobab@1.1.2": {
+      "emmett": "npm:emmett@3.1.1"
     },
-    "npm:buffer@3.2.2": {
+    "npm:buffer@3.3.1": {
       "base64-js": "npm:base64-js@0.0.8",
       "ieee754": "npm:ieee754@1.1.6",
       "is-array": "npm:is-array@1.0.1"
     },
-    "npm:classnames@2.1.2": {
+    "npm:classnames@2.1.3": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
@@ -87,7 +87,7 @@ System.config({
     "npm:envify@3.4.0": {
       "jstransform": "npm:jstransform@10.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1",
-      "through": "npm:through@2.3.7"
+      "through": "npm:through@2.3.8"
     },
     "npm:esprima-fb@13001.1001.0-dev-harmony-fb": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -112,7 +112,7 @@ System.config({
       "envify": "npm:envify@3.4.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
-    "npm:react@0.14.0-alpha3": {
+    "npm:react@0.14.0-beta1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "envify": "npm:envify@3.4.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
@@ -128,7 +128,7 @@ System.config({
       "string_decoder": "npm:string_decoder@0.10.31"
     },
     "npm:source-map@0.1.31": {
-      "amdefine": "npm:amdefine@0.1.1",
+      "amdefine": "npm:amdefine@1.0.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
@@ -141,7 +141,7 @@ System.config({
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
-    "npm:through@2.3.7": {
+    "npm:through@2.3.8": {
       "process": "github:jspm/nodelibs-process@0.1.1",
       "stream": "github:jspm/nodelibs-stream@0.1.0"
     },
